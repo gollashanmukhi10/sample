@@ -1,0 +1,121 @@
+
+<DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System - Git Branching</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #243b64;
+        }
+
+        button {
+            background: #243b64;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        pre {
+            background: #18212f;
+            color: #a7f3d0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .module {
+            padding: 12px;
+            margin: 10px 0;
+            background: #eef3ff;
+            border-left: 5px solid #243b64;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Management System</h1>
+    <p>Git Branching and Merging Demonstration</p>
+
+    <h2>1. Create Main Branch</h2>
+    <pre>
+git init
+git branch -M main
+git add .
+git commit -m "Initial commit"
+    </pre>
+
+    <h2>2. Student Registration Branch</h2>
+    <div class="module">
+        <h3>Student Registration Module</h3>
+        <p>Register students using their ID, name, and course.</p>
+    </div>
+
+    <pre>
+git checkout -b student-registration
+git add .
+git commit -m "Add student registration module"
+    </pre>
+
+    <h2>3. Student Result Branch</h2>
+    <div class="module">
+        <h3>Student Result Module</h3>
+        <p>Enter student marks and calculate the result.</p>
+    </div>
+
+    <pre>
+git checkout main
+git checkout -b student-result
+git add .
+git commit -m "Add student result module"
+    </pre>
+
+    <h2>4. Merge Both Branches into Main</h2>
+    <pre>
+git checkout main
+git merge student-registration
+git merge student-result
+    </pre>
+
+    <h2>5. Display Git History</h2>
+    <button onclick="showHistory()">Show Git History</button>
+    <pre id="history">Click the button to display Git history.</pre>
+
+    <h2>6. Result</h2>
+    <p>
+        Both student registration and student result modules are
+        merged into the main branch.
+    </p>
+</div>
+
+<script>
+function showHistory() {
+    document.getElementById("history").textContent =
+  Merge student-result into main
+Add student result module
+ Merge student-registration into main
+
+ Add student registration module
+ Initial commit ;
+}
+</script>
+
+</body>
+</html>
